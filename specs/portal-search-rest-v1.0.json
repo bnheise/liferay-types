@@ -1,0 +1,468 @@
+{
+  "components" : {
+    "schemas" : {
+      "SearchResponse" : {
+        "properties" : {
+          "aggregationResults" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "documents" : {
+            "items" : {
+              "type" : "object"
+            },
+            "type" : "array"
+          },
+          "facets" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "maxScore" : {
+            "format" : "float",
+            "type" : "number"
+          },
+          "page" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "pageSize" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "response" : {
+            "type" : "object"
+          },
+          "totalHits" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.portal.search.rest.dto.v1_0.SearchResponse",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "SearchResponse"
+        }
+      },
+      "Facet" : {
+        "properties" : {
+          "facetCriteria" : {
+            "type" : "string"
+          },
+          "facetValues" : {
+            "items" : {
+              "$ref" : "#/components/schemas/FacetValue"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "SearchRequestBody" : {
+        "properties" : {
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "searchContextAttributes" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.portal.search.rest.dto.v1_0.SearchRequestBody",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "SearchRequestBody"
+        }
+      },
+      "FacetValue" : {
+        "properties" : {
+          "numberOfOccurrences" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "term" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "PageSuggestionsContributorResults" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/SuggestionsContributorResults"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Suggestion" : {
+        "properties" : {
+          "attributes" : {
+            "type" : "object"
+          },
+          "score" : {
+            "format" : "float",
+            "type" : "number"
+          },
+          "text" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.portal.search.rest.dto.v1_0.Suggestion",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Suggestion"
+        }
+      },
+      "SuggestionsContributorResults" : {
+        "properties" : {
+          "attributes" : {
+            "type" : "object"
+          },
+          "displayGroupName" : {
+            "type" : "string"
+          },
+          "suggestions" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Suggestion"
+            },
+            "type" : "array"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.portal.search.rest.dto.v1_0.SuggestionsContributorResults",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "SuggestionsContributorResults"
+        }
+      },
+      "SuggestionsContributorConfiguration" : {
+        "properties" : {
+          "attributes" : {
+            "type" : "object"
+          },
+          "contributorName" : {
+            "type" : "string"
+          },
+          "displayGroupName" : {
+            "type" : "string"
+          },
+          "size" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.portal.search.rest.dto.v1_0.SuggestionsContributorConfiguration",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "SuggestionsContributorConfiguration"
+        }
+      }
+    }
+  },
+  "info" : {
+    "description" : "A Java client JAR is available for use with the group ID 'com.liferay', artifact ID 'com.liferay.portal.search.rest.client', and version '1.0.9'.",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "v1.0"
+  },
+  "openapi" : "3.0.1",
+  "paths" : {
+    "/v1.0/openapi.{type}" : {
+      "get" : {
+        "operationId" : "getOpenAPI",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "type",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/yaml" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/search" : {
+      "post" : {
+        "description" : "Search the company index for matching content. Using this endpoint requires a dev feature flag: set feature.flag.LPS-179669 to true.",
+        "operationId" : "postSearch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "basicFacetSelection",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "entryClassNames",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "explain",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "groupIds",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "includeAssetSearchSummary",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "includeAssetTitle",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "includeRequest",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "includeResponse",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "keywords",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "resultFields",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "scopeGroupId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SearchRequestBody"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/SearchRequestBody"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SearchResponse"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SearchResponse"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "SearchResponse" ]
+      }
+    },
+    "/v1.0/suggestions" : {
+      "post" : {
+        "operationId" : "postSuggestionsPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "currentURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "destinationFriendlyURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "groupId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "keywordsParameterName",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "plid",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "scope",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "items" : {
+                  "$ref" : "#/components/schemas/SuggestionsContributorConfiguration"
+                },
+                "type" : "array"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "items" : {
+                  "$ref" : "#/components/schemas/SuggestionsContributorConfiguration"
+                },
+                "type" : "array"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageSuggestionsContributorResults"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageSuggestionsContributorResults"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Suggestion" ]
+      }
+    }
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/o/portal-search-rest/"
+  } ]
+}

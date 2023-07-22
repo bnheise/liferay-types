@@ -1,0 +1,5761 @@
+{
+  "components" : {
+    "schemas" : {
+      "AccountAddress" : {
+        "enum" : [ "city", "countryISOCode", "name", "street1" ],
+        "example" : "[{city=Diamond Bar, countryISOCode=US, defaultBilling=true, defaultShipping=true, description=right stairs, first room on the left, id=31130, latitude=33.9976884, longitude=-117.8144595, name=Alessio Antonio Rendina, phoneNumber=(123) 456 7890, regionISOCode=CA, street1=1400 Montefino Ave, street2=1st floor, street3=suite 200, zip=91765}]",
+        "properties" : {
+          "city" : {
+            "example" : "Diamond Bar",
+            "type" : "string"
+          },
+          "countryISOCode" : {
+            "example" : "US",
+            "type" : "string"
+          },
+          "defaultBilling" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "defaultShipping" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "description" : {
+            "example" : "right stairs, first room on the left",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "latitude" : {
+            "example" : 33.9976884,
+            "format" : "double",
+            "type" : "number"
+          },
+          "longitude" : {
+            "example" : -117.8144595,
+            "format" : "double",
+            "type" : "number"
+          },
+          "name" : {
+            "example" : "Alessio Antonio Rendina",
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "example" : "(123) 456 7890",
+            "type" : "string"
+          },
+          "regionISOCode" : {
+            "example" : "CA",
+            "type" : "string"
+          },
+          "street1" : {
+            "example" : "1400",
+            "type" : "string"
+          },
+          "street2" : {
+            "example" : "1st floor",
+            "type" : "string"
+          },
+          "street3" : {
+            "example" : "suite 200",
+            "type" : "string"
+          },
+          "type" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "zip" : {
+            "example" : "91765",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.AccountAddress",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "city", "countryISOCode", "name", "street1" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "AccountAddress"
+        }
+      },
+      "Facet" : {
+        "properties" : {
+          "facetCriteria" : {
+            "type" : "string"
+          },
+          "facetValues" : {
+            "items" : {
+              "$ref" : "#/components/schemas/FacetValue"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "FacetValue" : {
+        "properties" : {
+          "numberOfOccurrences" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "term" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "PageAccountAddress" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AccountAddress"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "AccountChannelEntry" : {
+        "properties" : {
+          "accountExternalReferenceCode" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "accountId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "channelExternalReferenceCode" : {
+            "type" : "string"
+          },
+          "channelId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "classExternalReferenceCode" : {
+            "type" : "string"
+          },
+          "classPK" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "overrideEligibility" : {
+            "type" : "boolean"
+          },
+          "priority" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.AccountChannelEntry",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "AccountChannelEntry"
+        }
+      },
+      "PageAccountChannelEntry" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AccountChannelEntry"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "AccountChannelShippingOption" : {
+        "properties" : {
+          "accountExternalReferenceCode" : {
+            "example" : "UAB-34098-789-N",
+            "type" : "string"
+          },
+          "accountId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "channelExternalReferenceCode" : {
+            "type" : "string"
+          },
+          "channelId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "id" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "shippingMethodId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "shippingMethodKey" : {
+            "type" : "string"
+          },
+          "shippingOptionId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "shippingOptionKey" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.AccountChannelShippingOption",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "AccountChannelShippingOption"
+        }
+      },
+      "PageAccountChannelShippingOption" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AccountChannelShippingOption"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "AccountMember" : {
+        "enum" : [ "email" ],
+        "example" : "[{description={en_US=Account Administrator Description US, hr_HR=Account Administrator Description HR, hu_HU=Account Administrator Description HU}}, {id=31256, name=Alessio Antonio Rendina, roles=null}]",
+        "properties" : {
+          "accountId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "accountRoles" : {
+            "example" : "[{description={en_US=Account Administrator Description US, hr_HR=Account Administrator Description HR, hu_HU=Account Administrator Description HU}}, {description={en_US=Order Manager Description US, hr_HR=Order Manager Description HR, hu_HU=Order Manager Description HU}}]",
+            "items" : {
+              "$ref" : "#/components/schemas/AccountRole"
+            },
+            "type" : "array"
+          },
+          "email" : {
+            "example" : "joe.1@commerce.com",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "name" : {
+            "example" : "User Name",
+            "type" : "string"
+          },
+          "userExternalReferenceCode" : {
+            "example" : "UAB-34098-789-N",
+            "type" : "string"
+          },
+          "userId" : {
+            "example" : 30002,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.AccountMember",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "email" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "AccountMember"
+        }
+      },
+      "AccountRole" : {
+        "enum" : [ "name" ],
+        "example" : "[{description={en_US=Account Administrator Description US, hr_HR=Account Administrator Description HR, hu_HU=Account Administrator Description HU}}, {description={en_US=Order Manager Description US, hr_HR=Order Manager Description HR, hu_HU=Order Manager Description HU}}]",
+        "properties" : {
+          "description" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Role Description US, hr_HR=Role Description HR, hu_HU=Role Description HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Role Description US, hr_HR=Role Description HR, hu_HU=Role Description HU}",
+            "type" : "object"
+          },
+          "name" : {
+            "example" : "Role Name",
+            "type" : "string"
+          },
+          "roleId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "title" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Role Title US, hr_HR=Role Title HR, hu_HU=Role Title HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Role Title US, hr_HR=Role Title HR, hu_HU=Role Title HU}",
+            "type" : "object"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.AccountRole",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "name" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "AccountRole"
+        }
+      },
+      "PageAccountMember" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AccountMember"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "AccountOrganization" : {
+        "example" : "[{id=20546, name=Liferay Italy, organizationId=20433, treePath=/Liferay/Liferay Italy}]",
+        "properties" : {
+          "accountId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "example" : "Organization Name",
+            "type" : "string"
+          },
+          "organizationExternalReferenceCode" : {
+            "example" : "UAB-34098-789-N",
+            "type" : "string"
+          },
+          "organizationId" : {
+            "example" : 30002,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "treePath" : {
+            "example" : "/Parent Organization/Organization Name",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.AccountOrganization",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "AccountOrganization"
+        }
+      },
+      "PageAccountOrganization" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AccountOrganization"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Account" : {
+        "properties" : {
+          "accountAddresses" : {
+            "example" : "[{city=Diamond Bar, countryISOCode=US, defaultBilling=true, defaultShipping=true, description=right stairs, first room on the left, id=31130, latitude=33.9976884, longitude=-117.8144595, name=Alessio Antonio Rendina, phoneNumber=(123) 456 7890, regionISOCode=CA, street1=1400 Montefino Ave, street2=1st floor, street3=suite 200, zip=91765}]",
+            "items" : {
+              "$ref" : "#/components/schemas/AccountAddress"
+            },
+            "type" : "array"
+          },
+          "accountMembers" : {
+            "example" : "[{description={en_US=Account Administrator Description US, hr_HR=Account Administrator Description HR, hu_HU=Account Administrator Description HU}}, {id=31256, name=Alessio Antonio Rendina, roles=null}]",
+            "items" : {
+              "$ref" : "#/components/schemas/AccountMember"
+            },
+            "type" : "array"
+          },
+          "accountOrganizations" : {
+            "example" : "[{id=20546, name=Liferay Italy, organizationId=20433, treePath=/Liferay/Liferay Italy}]",
+            "items" : {
+              "$ref" : "#/components/schemas/AccountOrganization"
+            },
+            "type" : "array"
+          },
+          "active" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "dateCreated" : {
+            "description" : "The account's creation date.",
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "dateModified" : {
+            "description" : "The account's most recent modification date.",
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "defaultBillingAccountAddressId" : {
+            "example" : 10130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "defaultShippingAccountAddressId" : {
+            "example" : 10131,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "emailAddresses" : {
+            "example" : "[joe.1@commerce.com, joe.2@commerce.com, joe.3@commerce.com]",
+            "items" : {
+              "example" : "[joe.1@commerce.com, joe.2@commerce.com, joe.3@commerce.com]",
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "logoId" : {
+            "example" : 20078,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "logoURL" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "name" : {
+            "example" : "Account Name",
+            "type" : "string"
+          },
+          "root" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "taxId" : {
+            "example" : "Abcd1234",
+            "type" : "string"
+          },
+          "type" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.Account",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "externalReferenceCode", "name" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "Account"
+        }
+      },
+      "MultipartBody" : {
+        "properties" : {
+          "values" : {
+            "additionalProperties" : {
+              "type" : "string"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageAccount" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Account"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "AdminAccountGroup" : {
+        "properties" : {
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "description" : {
+            "example" : "AdminAccountGroup Description",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "name" : {
+            "example" : "AdminAccountGroup Name",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.AdminAccountGroup",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "name" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "AdminAccountGroup"
+        }
+      },
+      "PageAdminAccountGroup" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AdminAccountGroup"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "User" : {
+        "properties" : {
+          "email" : {
+            "example" : "joe.1@commerce.com",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "jobTitle" : {
+            "type" : "string"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "male" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "middleName" : {
+            "type" : "string"
+          },
+          "roles" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.account.dto.v1_0.User",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "email", "firstName", "lastName" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "User"
+        }
+      }
+    }
+  },
+  "info" : {
+    "description" : "Liferay Commerce Admin Account API. A Java client JAR is available for use with the group ID 'com.liferay', artifact ID 'com.liferay.headless.commerce.admin.account.client', and version '4.0.26'.",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title" : "Liferay Commerce Admin Account API",
+    "version" : "v1.0"
+  },
+  "openapi" : "3.0.1",
+  "paths" : {
+    "/v1.0/accountAddresses/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteAccountAddressByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "get" : {
+        "operationId" : "getAccountAddressByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountAddressByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/accountAddresses" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountAddressesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      }
+    },
+    "/v1.0/accounts/{id}/accountAddresses" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountAddressesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      }
+    },
+    "/v1.0/accountAddresses/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "get" : {
+        "operationId" : "getAccountAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "put" : {
+        "operationId" : "putAccountAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      }
+    },
+    "/v1.0/accounts/accountAddresses/batch" : {
+      "post" : {
+        "operationId" : "postAccountIdAccountAddressBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      }
+    },
+    "/v1.0/accountAddresses/batch" : {
+      "delete" : {
+        "operationId" : "deleteAccountAddressBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      },
+      "put" : {
+        "operationId" : "putAccountAddressBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountAddress" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-users" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelUsersPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelUser",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-billing-addresses" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelBillingAddressesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelBillingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-delivery-terms" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelDeliveryTermsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelDeliveryTerm",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-payment-methods" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelPaymentMethodsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelPaymentMethod",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-shipping-addresses" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelShippingAddressesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelShippingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-currencies" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelCurrenciesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelCurrency",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-discounts" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelDiscountsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelDiscount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-price-lists" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelPriceListsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelPriceList",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-billing-addresses/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelBillingAddressId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelBillingAddressId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelBillingAddressId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-currencies/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelCurrencyId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelCurrencyId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelCurrencyId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-delivery-terms/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelDeliveryTermId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelDeliveryTermId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelDeliveryTermId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-discounts/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelDiscountId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelDiscountId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelDiscountId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-payment-methods/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelPaymentMethodId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelPaymentMethodId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelPaymentMethodId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-payment-terms/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelPaymentTermId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelPaymentTermId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelPaymentTermId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-price-list/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelPriceListId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelPriceListId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelPriceListId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-shipping-addresses/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelShippingAddressId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelShippingAddressId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelShippingAddressId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-currencies" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelCurrenciesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelCurrency",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-discounts" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelDiscountsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelDiscount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-payment-terms" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelPaymentTermsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelPaymentTerm",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-price-lists" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelPriceListsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelPriceList",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-users" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelUsersPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelUser",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-billing-addresses" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelBillingAddressesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelBillingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-delivery-terms" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelDeliveryTermsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelDeliveryTerm",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-payment-methods" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelPaymentMethodsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelPaymentMethod",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-payment-terms" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelPaymentTermsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelPaymentTerm",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/account-channel-users/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelUserId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelUserId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelUserId",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-shipping-addresses" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelShippingAddressesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelShippingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelEntry"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelEntry" ]
+      }
+    },
+    "/v1.0/accounts/{id}/account-channel-shipping-option" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountChannelShippingOptionPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelShippingOption"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelShippingOption"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelShippingOption",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelShippingOption"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelShippingOption"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      }
+    },
+    "/v1.0/account-channel-shipping-options/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelShippingOption",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      },
+      "get" : {
+        "operationId" : "getAccountChannelShippingOption",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountChannelShippingOption",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelShippingOption"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelShippingOption"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/account-channel-shipping-option" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountChannelShippingOptionPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelShippingOption"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountChannelShippingOption"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountChannelShippingOption",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelShippingOption"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountChannelShippingOption"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountChannelShippingOption"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      }
+    },
+    "/v1.0/accounts/account-channel-shipping-option/batch" : {
+      "post" : {
+        "operationId" : "postAccountIdAccountChannelShippingOptionBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      }
+    },
+    "/v1.0/account-channel-shipping-options/batch" : {
+      "delete" : {
+        "operationId" : "deleteAccountChannelShippingOptionBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountChannelShippingOption" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/accountMembers" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountMembersPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountMember"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountMember"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/accountMembers/{userId}" : {
+      "delete" : {
+        "operationId" : "deleteAccountByExternalReferenceCodeAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "userId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      },
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "userId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountByExternalReferenceCodeAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "userId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      }
+    },
+    "/v1.0/accounts/{id}/accountMembers/{userId}" : {
+      "delete" : {
+        "operationId" : "deleteAccountIdAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "userId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      },
+      "get" : {
+        "operationId" : "getAccountIdAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "userId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountIdAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "userId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      }
+    },
+    "/v1.0/accounts/{id}/accountMembers" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountMembersPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountMember"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountMember"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountMember",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountMember"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountMember"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      }
+    },
+    "/v1.0/accounts/accountMembers/batch" : {
+      "post" : {
+        "operationId" : "postAccountIdAccountMemberBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountMember" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/accountOrganizations/{organizationId}" : {
+      "delete" : {
+        "operationId" : "deleteAccountByExternalReferenceCodeAccountOrganization",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "organizationId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      },
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountOrganization",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "organizationId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/accountOrganizations" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountOrganizationsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountOrganization"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountOrganization"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      },
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountOrganization",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountOrganization"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountOrganization"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      }
+    },
+    "/v1.0/accounts/{id}/accountOrganizations/{organizationId}" : {
+      "delete" : {
+        "operationId" : "deleteAccountIdAccountOrganization",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "organizationId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      },
+      "get" : {
+        "operationId" : "getAccountIdAccountOrganization",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "organizationId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      }
+    },
+    "/v1.0/accounts/{id}/accountOrganizations" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountOrganizationsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountOrganization"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccountOrganization"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      },
+      "post" : {
+        "operationId" : "postAccountIdAccountOrganization",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountOrganization"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountOrganization"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountOrganization"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      }
+    },
+    "/v1.0/accounts/accountOrganizations/batch" : {
+      "post" : {
+        "operationId" : "postAccountIdAccountOrganizationBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AccountOrganization" ]
+      }
+    },
+    "/v1.0/accountGroups/by-externalReferenceCode/{externalReferenceCode}/accounts/{accountExternalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteAccountGroupByExternalReferenceCodeAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "accountExternalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accountGroups/by-externalReferenceCode/{externalReferenceCode}/accounts" : {
+      "post" : {
+        "operationId" : "postAccountGroupByExternalReferenceCodeAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/logo" : {
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeLogo",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MultipartBody"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteAccountByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      },
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts" : {
+      "get" : {
+        "operationId" : "getAccountsPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccount"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAccount"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      },
+      "post" : {
+        "operationId" : "postAccount",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      },
+      "get" : {
+        "operationId" : "getAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Account"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts/{id}/logo" : {
+      "post" : {
+        "operationId" : "postAccountLogo",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MultipartBody"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts/export-batch" : {
+      "post" : {
+        "operationId" : "postAccountsPageExportBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts/batch" : {
+      "delete" : {
+        "operationId" : "deleteAccountBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      },
+      "post" : {
+        "operationId" : "postAccountBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/accountGroups" : {
+      "get" : {
+        "operationId" : "getAccountByExternalReferenceCodeAccountGroupsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAdminAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAdminAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      }
+    },
+    "/v1.0/accountGroups/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteAccountGroupByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      },
+      "get" : {
+        "operationId" : "getAccountGroupByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AdminAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AdminAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountGroupByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AdminAccountGroup"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AdminAccountGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      }
+    },
+    "/v1.0/accounts/{id}/accountGroups" : {
+      "get" : {
+        "operationId" : "getAccountIdAccountGroupsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAdminAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAdminAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      }
+    },
+    "/v1.0/accountGroups" : {
+      "get" : {
+        "operationId" : "getAccountGroupsPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAdminAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAdminAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      },
+      "post" : {
+        "operationId" : "postAccountGroup",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AdminAccountGroup"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AdminAccountGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AdminAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AdminAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      }
+    },
+    "/v1.0/accountGroups/{id}" : {
+      "delete" : {
+        "operationId" : "deleteAccountGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      },
+      "get" : {
+        "operationId" : "getAccountGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AdminAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AdminAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      },
+      "patch" : {
+        "operationId" : "patchAccountGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AdminAccountGroup"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AdminAccountGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "AdminAccountGroup" ]
+      }
+    },
+    "/v1.0/openapi.{type}" : {
+      "get" : {
+        "operationId" : "getOpenAPI",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "type",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/yaml" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/accounts/by-externalReferenceCode/{externalReferenceCode}/accountMembers/createUser" : {
+      "post" : {
+        "operationId" : "postAccountByExternalReferenceCodeAccountMemberCreateUser",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/User"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "User" ]
+      }
+    }
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/o/headless-commerce-admin-account/"
+  } ]
+}

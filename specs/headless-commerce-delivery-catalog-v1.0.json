@@ -1,0 +1,3008 @@
+{
+  "components" : {
+    "schemas" : {
+      "Attachment" : {
+        "properties" : {
+          "attachment" : {
+            "description" : "Base64 encoded file",
+            "type" : "string"
+          },
+          "displayDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "expirationDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "neverExpire" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "options" : {
+            "additionalProperties" : {
+              "example" : "{color=yellow, optionKey=optionValueKey, size=xs}",
+              "type" : "string"
+            },
+            "example" : "{color=yellow, optionKey=optionValueKey, size=xs}",
+            "type" : "object"
+          },
+          "priority" : {
+            "example" : 1.2,
+            "format" : "double",
+            "type" : "number"
+          },
+          "src" : {
+            "description" : "URL of the location",
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "type" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Attachment",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "sku" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "Attachment"
+        }
+      },
+      "Facet" : {
+        "properties" : {
+          "facetCriteria" : {
+            "type" : "string"
+          },
+          "facetValues" : {
+            "items" : {
+              "$ref" : "#/components/schemas/FacetValue"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "FacetValue" : {
+        "properties" : {
+          "numberOfOccurrences" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "term" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "PageAttachment" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Attachment"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Category" : {
+        "properties" : {
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "description" : "Category Name",
+            "type" : "string"
+          },
+          "siteId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "vocabulary" : {
+            "example" : "Default Vocabulary",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Category",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Category"
+        }
+      },
+      "PageCategory" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Category"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Channel" : {
+        "properties" : {
+          "currencyCode" : {
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "type" : "string"
+          },
+          "id" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "siteGroupId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Channel",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "currencyCode", "name", "type" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "Channel"
+        }
+      },
+      "PageChannel" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Channel"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "LinkedProduct" : {
+        "properties" : {
+          "productExternalReferenceCode" : {
+            "example" : "exampleERC",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "productId" : {
+            "example" : 33131,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "type" : {
+            "example" : "exampleERC",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.LinkedProduct",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "LinkedProduct"
+        }
+      },
+      "PageLinkedProduct" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/LinkedProduct"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Availability" : {
+        "properties" : {
+          "label" : {
+            "example" : "available",
+            "type" : "string"
+          },
+          "label_i18n" : {
+            "example" : "Available",
+            "type" : "string"
+          },
+          "stockQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Availability",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Availability"
+        }
+      },
+      "MappedProduct" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "availability" : {
+            "$ref" : "#/components/schemas/Availability"
+          },
+          "firstAvailableReplacementMappedProduct" : {
+            "$ref" : "#/components/schemas/MappedProduct"
+          },
+          "id" : {
+            "example" : 33130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "price" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "productConfiguration" : {
+            "$ref" : "#/components/schemas/ProductConfiguration"
+          },
+          "productExternalReferenceCode" : {
+            "example" : "exampleERC",
+            "type" : "string"
+          },
+          "productId" : {
+            "example" : 33131,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "productName" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Hand Saw, hr_HR=Product Name HR, hu_HU=Product Name HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Hand Saw, hr_HR=Product Name HR, hu_HU=Product Name HU}",
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "productOptions" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ProductOption"
+            },
+            "type" : "array"
+          },
+          "purchasable" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "quantity" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "replacementMappedProduct" : {
+            "$ref" : "#/components/schemas/MappedProduct"
+          },
+          "replacementMessage" : {
+            "example" : "MIN3123 has been replaced by MIN1289",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "sequence" : {
+            "example" : "1",
+            "type" : "string"
+          },
+          "sku" : {
+            "example" : "SKU01",
+            "type" : "string"
+          },
+          "skuExternalReferenceCode" : {
+            "example" : "SKU0111",
+            "type" : "string"
+          },
+          "skuId" : {
+            "example" : 33135,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "skuOptions" : {
+            "items" : {
+              "$ref" : "#/components/schemas/SkuOption"
+            },
+            "type" : "array"
+          },
+          "thumbnail" : {
+            "example" : "simple",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "type" : {
+            "enum" : [ "diagram", "external", "sku" ],
+            "example" : "sku",
+            "type" : "string"
+          },
+          "urls" : {
+            "additionalProperties" : {
+              "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+              "type" : "string"
+            },
+            "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+            "type" : "object"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.MappedProduct",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "MappedProduct"
+        }
+      },
+      "PageMappedProduct" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/MappedProduct"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Price" : {
+        "properties" : {
+          "currency" : {
+            "type" : "string"
+          },
+          "discount" : {
+            "type" : "string"
+          },
+          "discountPercentage" : {
+            "type" : "string"
+          },
+          "discountPercentages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "finalPrice" : {
+            "type" : "string"
+          },
+          "price" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "priceFormatted" : {
+            "type" : "string"
+          },
+          "priceOnApplication" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "promoPrice" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "promoPriceFormatted" : {
+            "type" : "string"
+          },
+          "tierPrice" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "tierPriceFormatted" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Price",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Price"
+        }
+      },
+      "ProductConfiguration" : {
+        "properties" : {
+          "allowBackOrder" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "allowedOrderQuantities" : {
+            "example" : [ 10, 20, 30, 40 ],
+            "items" : {
+              "format" : "int32",
+              "type" : "integer"
+            },
+            "type" : "array"
+          },
+          "displayAvailability" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "displayStockQuantity" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "inventoryEngine" : {
+            "description" : "The inventory engine that will be used to manage the product inventory",
+            "type" : "string"
+          },
+          "lowStockAction" : {
+            "description" : "The low stock action that will be performed when a product is out of stock",
+            "type" : "string"
+          },
+          "maxOrderQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "minOrderQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "minStockQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "multipleOrderQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.ProductConfiguration",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "ProductConfiguration"
+        }
+      },
+      "ProductOption" : {
+        "properties" : {
+          "catalogId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "fieldType" : {
+            "example" : "select",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "key" : {
+            "example" : "color",
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "optionId" : {
+            "example" : 30080,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "priority" : {
+            "example" : 1.2,
+            "format" : "double",
+            "type" : "number"
+          },
+          "productOptionValues" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ProductOptionValue"
+            },
+            "type" : "array"
+          },
+          "required" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "skuContributor" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.ProductOption",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "ProductOption"
+        }
+      },
+      "ProductOptionValue" : {
+        "properties" : {
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "key" : {
+            "example" : "black",
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "preselected" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "priority" : {
+            "example" : 1.2,
+            "format" : "double",
+            "type" : "number"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.ProductOptionValue",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "ProductOptionValue"
+        }
+      },
+      "SkuOption" : {
+        "properties" : {
+          "key" : {
+            "example" : 31130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "skuOptionId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "skuOptionKey" : {
+            "example" : "Sku Option Key",
+            "type" : "string"
+          },
+          "skuOptionValueId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "skuOptionValueKey" : {
+            "example" : "Sku Option Value Key",
+            "type" : "string"
+          },
+          "value" : {
+            "example" : 31130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.SkuOption",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "SkuOption"
+        }
+      },
+      "PagePin" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Pin"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Pin" : {
+        "properties" : {
+          "id" : {
+            "example" : 33130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "mappedProduct" : {
+            "$ref" : "#/components/schemas/MappedProduct"
+          },
+          "positionX" : {
+            "example" : 33.54,
+            "format" : "double",
+            "type" : "number"
+          },
+          "positionY" : {
+            "example" : 33.54,
+            "format" : "double",
+            "type" : "number"
+          },
+          "sequence" : {
+            "example" : "1",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Pin",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Pin"
+        }
+      },
+      "PageProductOption" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ProductOption"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "DDMOption" : {
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "required" : {
+            "type" : "boolean"
+          },
+          "value" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.DDMOption",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "DDMOption"
+        }
+      },
+      "Product" : {
+        "properties" : {
+          "attachments" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Attachment"
+            },
+            "type" : "array"
+          },
+          "categories" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Category"
+            },
+            "type" : "array"
+          },
+          "createDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "expando" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "externalReferenceCode" : {
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "images" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Attachment"
+            },
+            "type" : "array"
+          },
+          "linkedProducts" : {
+            "items" : {
+              "$ref" : "#/components/schemas/LinkedProduct"
+            },
+            "type" : "array"
+          },
+          "metaDescription" : {
+            "type" : "string"
+          },
+          "metaKeyword" : {
+            "type" : "string"
+          },
+          "metaTitle" : {
+            "type" : "string"
+          },
+          "modifiedDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "multipleOrderQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "productConfiguration" : {
+            "$ref" : "#/components/schemas/ProductConfiguration"
+          },
+          "productId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "productOptions" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ProductOption"
+            },
+            "type" : "array"
+          },
+          "productSpecifications" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ProductSpecification"
+            },
+            "type" : "array"
+          },
+          "productType" : {
+            "example" : "simple",
+            "type" : "string"
+          },
+          "relatedProducts" : {
+            "items" : {
+              "$ref" : "#/components/schemas/RelatedProduct"
+            },
+            "type" : "array"
+          },
+          "shortDescription" : {
+            "type" : "string"
+          },
+          "skus" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Sku"
+            },
+            "type" : "array"
+          },
+          "slug" : {
+            "type" : "string"
+          },
+          "tags" : {
+            "example" : "[tag1, tag2, tag3]",
+            "items" : {
+              "example" : "[tag1, tag2, tag3]",
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "urlImage" : {
+            "type" : "string"
+          },
+          "urls" : {
+            "additionalProperties" : {
+              "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+              "type" : "string"
+            },
+            "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Product",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Product"
+        }
+      },
+      "ProductSpecification" : {
+        "properties" : {
+          "id" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "optionCategoryId" : {
+            "example" : 30129,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "priority" : {
+            "example" : 1.2,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "productId" : {
+            "example" : 30129,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "specificationGroupKey" : {
+            "type" : "string"
+          },
+          "specificationGroupTitle" : {
+            "type" : "string"
+          },
+          "specificationId" : {
+            "example" : 30129,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "specificationKey" : {
+            "example" : "specification-key",
+            "type" : "string"
+          },
+          "specificationTitle" : {
+            "type" : "string"
+          },
+          "value" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.ProductSpecification",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "ProductSpecification"
+        }
+      },
+      "RelatedProduct" : {
+        "properties" : {
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "priority" : {
+            "example" : 1.2,
+            "format" : "double",
+            "type" : "number"
+          },
+          "productId" : {
+            "example" : 30129,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "type" : {
+            "example" : "cross-sell",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.RelatedProduct",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "RelatedProduct"
+        }
+      },
+      "Sku" : {
+        "properties" : {
+          "DDMOptions" : {
+            "items" : {
+              "$ref" : "#/components/schemas/DDMOption"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "allowedOrderQuantities" : {
+            "example" : [ 10, 20, 30, 40 ],
+            "items" : {
+              "example" : "[10,20,30,40]",
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "availability" : {
+            "$ref" : "#/components/schemas/Availability"
+          },
+          "depth" : {
+            "example" : 1.1,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discontinued" : {
+            "example" : false,
+            "type" : "boolean"
+          },
+          "discontinuedDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "displayDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "displayDiscountLevels" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "expirationDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "gtin" : {
+            "example" : "12341234",
+            "type" : "string"
+          },
+          "height" : {
+            "example" : 20.2,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "incomingQuantityLabel" : {
+            "type" : "string"
+          },
+          "manufacturerPartNumber" : {
+            "example" : "12341234",
+            "type" : "string"
+          },
+          "maxOrderQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "minOrderQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "neverExpire" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "price" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "published" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "purchasable" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "replacementSkuExternalReferenceCode" : {
+            "example" : "SKU0111",
+            "type" : "string"
+          },
+          "replacementSkuId" : {
+            "example" : 33135,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "sku" : {
+            "type" : "string"
+          },
+          "skuOptions" : {
+            "items" : {
+              "$ref" : "#/components/schemas/SkuOption"
+            },
+            "type" : "array"
+          },
+          "weight" : {
+            "example" : 1.1,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "width" : {
+            "example" : 20.2,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.Sku",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Sku"
+        }
+      },
+      "PageProduct" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Product"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageProductSpecification" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ProductSpecification"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageRelatedProduct" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/RelatedProduct"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageSku" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Sku"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageWishListItem" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/WishListItem"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "WishListItem" : {
+        "properties" : {
+          "finalPrice" : {
+            "type" : "string"
+          },
+          "friendlyURL" : {
+            "type" : "string"
+          },
+          "icon" : {
+            "type" : "string"
+          },
+          "id" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "productId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "productName" : {
+            "type" : "string"
+          },
+          "skuId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.WishListItem",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "WishListItem"
+        }
+      },
+      "PageWishList" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/WishList"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "WishList" : {
+        "properties" : {
+          "defaultWishList" : {
+            "type" : "boolean"
+          },
+          "id" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "wishListItems" : {
+            "items" : {
+              "$ref" : "#/components/schemas/WishListItem"
+            },
+            "type" : "array"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.catalog.dto.v1_0.WishList",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "WishList"
+        }
+      }
+    }
+  },
+  "info" : {
+    "description" : "Headless Commerce Delivery Catalog API. A Java client JAR is available for use with the group ID 'com.liferay', artifact ID 'com.liferay.headless.commerce.delivery.catalog.client', and version '4.0.35'.",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title" : "Headless Commerce Delivery Catalog API",
+    "version" : "v1.0"
+  },
+  "openapi" : "3.0.1",
+  "paths" : {
+    "/v1.0/channels/{channelId}/products/{productId}/attachments" : {
+      "get" : {
+        "operationId" : "getChannelProductAttachmentsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAttachment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAttachment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Attachment" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/images" : {
+      "get" : {
+        "operationId" : "getChannelProductImagesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAttachment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageAttachment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Attachment" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/categories" : {
+      "get" : {
+        "description" : "Gets a list of Category related to a Product.",
+        "operationId" : "getChannelProductCategoriesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCategory"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCategory"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Category" ]
+      }
+    },
+    "/v1.0/channels" : {
+      "get" : {
+        "operationId" : "getChannelsPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Channel" ]
+      }
+    },
+    "/v1.0/channels/export-batch" : {
+      "post" : {
+        "operationId" : "postChannelsPageExportBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Channel" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/linked-products" : {
+      "get" : {
+        "operationId" : "getChannelProductLinkedProductsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageLinkedProduct"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageLinkedProduct"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "LinkedProduct" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/mapped-products" : {
+      "get" : {
+        "operationId" : "getChannelProductMappedProductsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageMappedProduct"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageMappedProduct"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "MappedProduct" ]
+      }
+    },
+    "/v1.0/openapi.{type}" : {
+      "get" : {
+        "operationId" : "getOpenAPI",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "type",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/yaml" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/pins" : {
+      "get" : {
+        "operationId" : "getChannelProductPinsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePin"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePin"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Pin" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/product-options" : {
+      "get" : {
+        "operationId" : "getChannelProductProductOptionsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageProductOption"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageProductOption"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ProductOption" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}" : {
+      "get" : {
+        "description" : "Retrieves products from selected channel.",
+        "operationId" : "getChannelProduct",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Product"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Product"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Product" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products" : {
+      "get" : {
+        "description" : "Retrieves products from selected channel.",
+        "operationId" : "getChannelProductsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageProduct"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageProduct"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Product" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/product-specifications" : {
+      "get" : {
+        "operationId" : "getChannelProductProductSpecificationsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageProductSpecification"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageProductSpecification"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ProductSpecification" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/related-products" : {
+      "get" : {
+        "description" : "Gets a list of Related Products of a Product.",
+        "operationId" : "getChannelProductRelatedProductsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "type",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageRelatedProduct"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageRelatedProduct"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "RelatedProduct" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/skus/by-sku-option" : {
+      "post" : {
+        "description" : "Retrieves a SKU from selected channel and product ID.",
+        "operationId" : "postChannelProductSkuBySkuOption",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "quantity",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "items" : {
+                  "$ref" : "#/components/schemas/SkuOption"
+                },
+                "type" : "array"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "items" : {
+                  "$ref" : "#/components/schemas/SkuOption"
+                },
+                "type" : "array"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Sku"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Sku"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Sku" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/products/{productId}/skus" : {
+      "get" : {
+        "description" : "Retrieves products from selected channel.",
+        "operationId" : "getChannelProductSkusPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageSku"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageSku"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Sku" ]
+      },
+      "post" : {
+        "description" : "Retrieves a SKU from selected channel and product ID.",
+        "operationId" : "postChannelProductSku",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "productId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "quantity",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "items" : {
+                  "$ref" : "#/components/schemas/DDMOption"
+                },
+                "type" : "array"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "items" : {
+                  "$ref" : "#/components/schemas/DDMOption"
+                },
+                "type" : "array"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Sku"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Sku"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Sku" ]
+      }
+    },
+    "/v1.0/wishlists/{wishListId}/wishlist-items" : {
+      "get" : {
+        "description" : "Retrieves wishlist items by wishListId for a specific channel and account",
+        "operationId" : "getWishlistWishListWishListItemsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "wishListId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageWishListItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageWishListItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishListItem" ]
+      },
+      "post" : {
+        "operationId" : "postWishlistWishListWishListItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "wishListId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/WishListItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/WishListItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishListItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishListItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishListItem" ]
+      }
+    },
+    "/v1.0/wishlist-items/{wishListItemId}" : {
+      "delete" : {
+        "description" : "Deletes a wishlist item by wishListItemId.",
+        "operationId" : "deleteWishListItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "wishListItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishListItem" ]
+      },
+      "get" : {
+        "description" : "Retrieves wishlist item by wishListItemId for a specific channel and account",
+        "operationId" : "getWishListItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "wishListItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishListItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishListItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishListItem" ]
+      }
+    },
+    "/v1.0/wishlist-items/batch" : {
+      "delete" : {
+        "operationId" : "deleteWishListItemBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishListItem" ]
+      }
+    },
+    "/v1.0/wishlists/{wishListId}" : {
+      "delete" : {
+        "description" : "Deletes a wishlist by wishListId.",
+        "operationId" : "deleteWishList",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "wishListId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishList" ]
+      },
+      "get" : {
+        "description" : "Retrieves a wishlist by wishListId.",
+        "operationId" : "getWishList",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "wishListId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishList"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishList"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishList" ]
+      },
+      "patch" : {
+        "operationId" : "patchWishList",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "wishListId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/WishList"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/WishList"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishList"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishList"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishList" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/wishlists" : {
+      "get" : {
+        "description" : "Retrieves wishlists for a given channel.",
+        "operationId" : "getChannelWishListsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageWishList"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageWishList"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishList" ]
+      },
+      "post" : {
+        "operationId" : "postChannelWishList",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "accountId",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/WishList"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/WishList"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishList"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WishList"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishList" ]
+      }
+    },
+    "/v1.0/wishlists/batch" : {
+      "delete" : {
+        "operationId" : "deleteWishListBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "WishList" ]
+      }
+    }
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/o/headless-commerce-delivery-catalog/"
+  } ]
+}

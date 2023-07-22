@@ -1,0 +1,1493 @@
+{
+  "components" : {
+    "schemas" : {
+      "PlacedOrderAddress" : {
+        "properties" : {
+          "city" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "country" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "countryISOCode" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "description" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "latitude" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "longitude" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "name" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "region" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "regionISOCode" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "street1" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "street2" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "street3" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "type" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "typeId" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "vatNumber" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "zip" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.PlacedOrderAddress",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "PlacedOrderAddress"
+        }
+      },
+      "Facet" : {
+        "properties" : {
+          "facetCriteria" : {
+            "type" : "string"
+          },
+          "facetValues" : {
+            "items" : {
+              "$ref" : "#/components/schemas/FacetValue"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "FacetValue" : {
+        "properties" : {
+          "numberOfOccurrences" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "term" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "PagePlacedOrderComment" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PlacedOrderComment"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PlacedOrderComment" : {
+        "properties" : {
+          "author" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "content" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "restricted" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.PlacedOrderComment",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "PlacedOrderComment"
+        }
+      },
+      "PagePlacedOrderItem" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PlacedOrderItem"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PlacedOrderItem" : {
+        "properties" : {
+          "adaptiveMediaImageHTMLTag" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "errorMessages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "name" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "options" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "parentOrderItemId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "placedOrderItemShipments" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PlacedOrderItemShipment"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "price" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "productId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "productURLs" : {
+            "additionalProperties" : {
+              "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+              "type" : "string"
+            },
+            "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "quantity" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "replacedSku" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "settings" : {
+            "$ref" : "#/components/schemas/Settings"
+          },
+          "sku" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "skuId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "subscription" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "thumbnail" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "valid" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "virtualItemURLs" : {
+            "items" : {
+              "type" : "string"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.PlacedOrderItem",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "PlacedOrderItem"
+        }
+      },
+      "PlacedOrderItemShipment" : {
+        "properties" : {
+          "accountId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "author" : {
+            "example" : "Author",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "carrier" : {
+            "example" : "FedEx",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "createDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "estimatedDeliveryDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "estimatedShippingDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "modifiedDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "orderId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "quantity" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "shippingAddressId" : {
+            "example" : 31130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "shippingMethodId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "shippingOptionName" : {
+            "example" : "Standard Delivery",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "supplierShipment" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "trackingNumber" : {
+            "example" : "123AD-asd",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.PlacedOrderItemShipment",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "PlacedOrderItemShipment"
+        }
+      },
+      "Price" : {
+        "properties" : {
+          "currency" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "discount" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "discountFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "discountPercentage" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "discountPercentageLevel1" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "discountPercentageLevel2" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "discountPercentageLevel3" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "discountPercentageLevel4" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "finalPrice" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "finalPriceFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "price" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "priceFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "promoPrice" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "promoPriceFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.Price",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Price"
+        }
+      },
+      "Settings" : {
+        "properties" : {
+          "allowedQuantities" : {
+            "items" : {
+              "format" : "int32",
+              "type" : "integer"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "maxQuantity" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "minQuantity" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "multipleQuantity" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.Settings",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Settings"
+        }
+      },
+      "Status" : {
+        "properties" : {
+          "code" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "label" : {
+            "example" : "black",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "label_i18n" : {
+            "example" : "black",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.Status",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Status"
+        }
+      },
+      "PagePlacedOrderItemShipment" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PlacedOrderItemShipment"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PagePlacedOrder" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PlacedOrder"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PlacedOrder" : {
+        "properties" : {
+          "account" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "accountId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "author" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "channelId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "couponCode" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "createDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "currencyCode" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "errorMessages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "lastPriceUpdateDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "modifiedDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "orderStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "orderTypeExternalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "orderTypeId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderUUID" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "paymentMethod" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "paymentMethodLabel" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "paymentStatus" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "paymentStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "paymentStatusLabel" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "placedOrderBillingAddress" : {
+            "$ref" : "#/components/schemas/PlacedOrderAddress"
+          },
+          "placedOrderBillingAddressId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "placedOrderComments" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PlacedOrderComment"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "placedOrderItems" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PlacedOrderItem"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "placedOrderShippingAddress" : {
+            "$ref" : "#/components/schemas/PlacedOrderAddress"
+          },
+          "placedOrderShippingAddressId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "printedNote" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "purchaseOrderNumber" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "shippingMethod" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "shippingOption" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "status" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "summary" : {
+            "$ref" : "#/components/schemas/Summary"
+          },
+          "useAsBilling" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "valid" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "workflowStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.PlacedOrder",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "PlacedOrder"
+        }
+      },
+      "Summary" : {
+        "properties" : {
+          "currency" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "itemsQuantity" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "shippingDiscountPercentages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "shippingDiscountValue" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "shippingDiscountValueFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "shippingValue" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "shippingValueFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "shippingValueWithTaxAmount" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "shippingValueWithTaxAmountFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "subtotal" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "subtotalDiscountValue" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "subtotalDiscountValueFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "subtotalFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "taxValue" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "taxValueFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "total" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "totalDiscountPercentages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "totalDiscountValue" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "totalDiscountValueFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "totalFormatted" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.order.dto.v1_0.Summary",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Summary"
+        }
+      }
+    }
+  },
+  "info" : {
+    "description" : "Headless Delivery Commerce Order API. A Java client JAR is available for use with the group ID 'com.liferay', artifact ID 'com.liferay.headless.commerce.delivery.order.client', and version '1.0.10'.",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title" : "Headless Delivery Commerce Order API",
+    "version" : "v1.0"
+  },
+  "openapi" : "3.0.1",
+  "paths" : {
+    "/v1.0/openapi.{type}" : {
+      "get" : {
+        "operationId" : "getOpenAPI",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "type",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/yaml" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}/placed-order-billing-address" : {
+      "get" : {
+        "description" : "Retrieve placed order billing address.",
+        "operationId" : "getPlacedOrderPlacedOrderBillingAddres",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderAddress" ]
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}/placed-order-shipping-address" : {
+      "get" : {
+        "description" : "Retrieve placed order shipping address.",
+        "operationId" : "getPlacedOrderPlacedOrderShippingAddres",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderAddress" ]
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}/placed-order-comments" : {
+      "get" : {
+        "operationId" : "getPlacedOrderPlacedOrderCommentsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrderComment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrderComment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderComment" ]
+      }
+    },
+    "/v1.0/placed-order-comments/{placedOrderCommentId}" : {
+      "get" : {
+        "operationId" : "getPlacedOrderComment",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderCommentId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderComment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderComment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderComment" ]
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}/placed-order-comments/export-batch" : {
+      "post" : {
+        "operationId" : "postPlacedOrderPlacedOrderCommentsPageExportBatch",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderComment" ]
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}/placed-order-items" : {
+      "get" : {
+        "description" : "Retrieve placed order items.",
+        "operationId" : "getPlacedOrderPlacedOrderItemsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "skuId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderItem" ]
+      }
+    },
+    "/v1.0/placed-order-items/{placedOrderItemId}" : {
+      "get" : {
+        "description" : "Retrieve information of the given Placed Order.",
+        "operationId" : "getPlacedOrderItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderItem" ]
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}/placed-order-items/export-batch" : {
+      "post" : {
+        "operationId" : "postPlacedOrderPlacedOrderItemsPageExportBatch",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "skuId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderItem" ]
+      }
+    },
+    "/v1.0/placed-order-items/{placedOrderItemId}/placed-order-item-shipments" : {
+      "get" : {
+        "description" : "Retrieve shipments of the given Placed Order Item.",
+        "operationId" : "getPlacedOrderItemPlacedOrderItemShipmentsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrderItemShipment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrderItemShipment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderItemShipment" ]
+      }
+    },
+    "/v1.0/placed-order-items/{placedOrderItemId}/placed-order-item-shipments/export-batch" : {
+      "post" : {
+        "operationId" : "postPlacedOrderItemPlacedOrderItemShipmentsPageExportBatch",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrderItemShipment" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/accounts/{accountId}/placed-orders" : {
+      "get" : {
+        "description" : "Retrieves placed orders for specific account in the given channel.",
+        "operationId" : "getChannelAccountPlacedOrdersPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "accountId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrder"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePlacedOrder"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrder" ]
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}" : {
+      "get" : {
+        "description" : "Retrieve information of the given Placed Order.",
+        "operationId" : "getPlacedOrder",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrder"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PlacedOrder"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrder" ]
+      }
+    },
+    "/v1.0/placed-orders/{placedOrderId}/payment-url" : {
+      "get" : {
+        "operationId" : "getPlacedOrderPaymentURL",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "placedOrderId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PlacedOrder" ]
+      }
+    }
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/o/headless-commerce-delivery-order/"
+  } ]
+}

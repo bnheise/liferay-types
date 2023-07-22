@@ -1,0 +1,2146 @@
+{
+  "components" : {
+    "schemas" : {
+      "Address" : {
+        "properties" : {
+          "city" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "countryISOCode" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "id" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "latitude" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "longitude" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "type" : "string"
+          },
+          "region" : {
+            "type" : "string"
+          },
+          "regionISOCode" : {
+            "type" : "string"
+          },
+          "street1" : {
+            "type" : "string"
+          },
+          "street2" : {
+            "type" : "string"
+          },
+          "street3" : {
+            "type" : "string"
+          },
+          "type" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "typeId" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "vatNumber" : {
+            "type" : "string"
+          },
+          "zip" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.Address",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "city", "countryISOCode", "name", "street1" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "Address"
+        }
+      },
+      "CartComment" : {
+        "properties" : {
+          "author" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "content" : {
+            "type" : "string"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "restricted" : {
+            "type" : "boolean"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.CartComment",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "CartComment"
+        }
+      },
+      "Facet" : {
+        "properties" : {
+          "facetCriteria" : {
+            "type" : "string"
+          },
+          "facetValues" : {
+            "items" : {
+              "$ref" : "#/components/schemas/FacetValue"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "FacetValue" : {
+        "properties" : {
+          "numberOfOccurrences" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "term" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "PageCartComment" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/CartComment"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "CartItem" : {
+        "properties" : {
+          "adaptiveMediaImageHTMLTag" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "errorMessages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "name" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "options" : {
+            "type" : "string"
+          },
+          "parentCartItemId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "price" : {
+            "$ref" : "#/components/schemas/Price"
+          },
+          "productId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "productURLs" : {
+            "additionalProperties" : {
+              "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+              "type" : "string"
+            },
+            "example" : "{en_US=product-url-us, hr_HR=product-url-hr, hu_HU=product-url-hu}",
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "quantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "replacedSku" : {
+            "example" : "12341234",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "replacedSkuId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "settings" : {
+            "$ref" : "#/components/schemas/Settings"
+          },
+          "sku" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "skuId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "subscription" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "thumbnail" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "valid" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.CartItem",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "skuId" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "CartItem"
+        }
+      },
+      "Price" : {
+        "properties" : {
+          "currency" : {
+            "type" : "string"
+          },
+          "discount" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "discountFormatted" : {
+            "type" : "string"
+          },
+          "discountPercentage" : {
+            "type" : "string"
+          },
+          "discountPercentageLevel1" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "discountPercentageLevel2" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "discountPercentageLevel3" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "discountPercentageLevel4" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "finalPrice" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "finalPriceFormatted" : {
+            "type" : "string"
+          },
+          "price" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "priceFormatted" : {
+            "type" : "string"
+          },
+          "priceOnApplication" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "promoPrice" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "promoPriceFormatted" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.Price",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Price"
+        }
+      },
+      "Settings" : {
+        "properties" : {
+          "allowedQuantities" : {
+            "items" : {
+              "format" : "int32",
+              "type" : "integer"
+            },
+            "type" : "array"
+          },
+          "maxQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "minQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "multipleQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.Settings",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Settings"
+        }
+      },
+      "PageCartItem" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/CartItem"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Cart" : {
+        "properties" : {
+          "account" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "accountId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "author" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "billingAddress" : {
+            "$ref" : "#/components/schemas/Address"
+          },
+          "billingAddressId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "cartItems" : {
+            "items" : {
+              "$ref" : "#/components/schemas/CartItem"
+            },
+            "type" : "array"
+          },
+          "channelId" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "couponCode" : {
+            "type" : "string"
+          },
+          "createDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "currencyCode" : {
+            "type" : "string"
+          },
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "errorMessages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "id" : {
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "lastPriceUpdateDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "modifiedDate" : {
+            "format" : "date-time",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "notes" : {
+            "items" : {
+              "$ref" : "#/components/schemas/CartComment"
+            },
+            "type" : "array"
+          },
+          "orderStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "orderTypeExternalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "orderTypeId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "orderUUID" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "paymentMethod" : {
+            "type" : "string"
+          },
+          "paymentMethodLabel" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "paymentStatus" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "paymentStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "paymentStatusLabel" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "printedNote" : {
+            "type" : "string"
+          },
+          "purchaseOrderNumber" : {
+            "type" : "string"
+          },
+          "shippingAddress" : {
+            "$ref" : "#/components/schemas/Address"
+          },
+          "shippingAddressId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "shippingMethod" : {
+            "type" : "string"
+          },
+          "shippingOption" : {
+            "type" : "string"
+          },
+          "status" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "summary" : {
+            "$ref" : "#/components/schemas/Summary"
+          },
+          "useAsBilling" : {
+            "type" : "boolean"
+          },
+          "valid" : {
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "workflowStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.Cart",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Cart"
+        }
+      },
+      "PageCart" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Cart"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Status" : {
+        "properties" : {
+          "code" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "label" : {
+            "example" : "black",
+            "type" : "string"
+          },
+          "label_i18n" : {
+            "example" : "black",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.Status",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Status"
+        }
+      },
+      "Summary" : {
+        "properties" : {
+          "currency" : {
+            "type" : "string"
+          },
+          "itemsQuantity" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "shippingDiscountPercentages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "shippingDiscountValue" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "shippingDiscountValueFormatted" : {
+            "type" : "string"
+          },
+          "shippingValue" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "shippingValueFormatted" : {
+            "type" : "string"
+          },
+          "shippingValueWithTaxAmount" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "shippingValueWithTaxAmountFormatted" : {
+            "type" : "string"
+          },
+          "subtotal" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "subtotalDiscountPercentages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "subtotalDiscountValue" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "subtotalDiscountValueFormatted" : {
+            "type" : "string"
+          },
+          "subtotalFormatted" : {
+            "type" : "string"
+          },
+          "taxValue" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "taxValueFormatted" : {
+            "type" : "string"
+          },
+          "total" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "totalDiscountPercentages" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "totalDiscountValue" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "totalDiscountValueFormatted" : {
+            "type" : "string"
+          },
+          "totalFormatted" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.Summary",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Summary"
+        }
+      },
+      "CouponCode" : {
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.CouponCode",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "CouponCode"
+        }
+      },
+      "PagePaymentMethod" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/PaymentMethod"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PaymentMethod" : {
+        "properties" : {
+          "description" : {
+            "type" : "string"
+          },
+          "key" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.PaymentMethod",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "PaymentMethod"
+        }
+      },
+      "PageShippingMethod" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ShippingMethod"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "ShippingMethod" : {
+        "properties" : {
+          "description" : {
+            "type" : "string"
+          },
+          "id" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "shippingOptions" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ShippingOption"
+            },
+            "type" : "array"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.ShippingMethod",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "ShippingMethod"
+        }
+      },
+      "ShippingOption" : {
+        "properties" : {
+          "amount" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "amountFormatted" : {
+            "type" : "string"
+          },
+          "label" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.delivery.cart.dto.v1_0.ShippingOption",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "ShippingOption"
+        }
+      }
+    }
+  },
+  "info" : {
+    "description" : "Headless Delivery Commerce Cart API. A Java client JAR is available for use with the group ID 'com.liferay', artifact ID 'com.liferay.headless.commerce.delivery.cart.client', and version '4.0.27'.",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title" : "Headless Delivery Commerce Cart API",
+    "version" : "v1.0"
+  },
+  "openapi" : "3.0.1",
+  "paths" : {
+    "/v1.0/carts/{cartId}/billing-address" : {
+      "get" : {
+        "description" : "Retrive cart billing address.",
+        "operationId" : "getCartBillingAddres",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Address"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Address"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Address" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/shipping-address" : {
+      "get" : {
+        "description" : "Retrive cart billing address.",
+        "operationId" : "getCartShippingAddres",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Address"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Address"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Address" ]
+      }
+    },
+    "/v1.0/cart-comments/{cartCommentId}" : {
+      "delete" : {
+        "operationId" : "deleteCartComment",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartCommentId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      },
+      "get" : {
+        "operationId" : "getCartComment",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartCommentId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      },
+      "patch" : {
+        "operationId" : "patchCartComment",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartCommentId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartComment"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartComment"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      },
+      "put" : {
+        "operationId" : "putCartComment",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartCommentId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartComment"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartComment"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/comments" : {
+      "get" : {
+        "operationId" : "getCartCommentsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCartComment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCartComment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      },
+      "post" : {
+        "operationId" : "postCartComment",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartComment"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartComment"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartComment"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      }
+    },
+    "/v1.0/cart-comments/batch" : {
+      "delete" : {
+        "operationId" : "deleteCartCommentBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      },
+      "put" : {
+        "operationId" : "putCartCommentBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartComment" ]
+      }
+    },
+    "/v1.0/cart-items/{cartItemId}" : {
+      "delete" : {
+        "description" : "Deletes an Cart Item by ID.",
+        "operationId" : "deleteCartItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      },
+      "get" : {
+        "description" : "Retrive information of the given Cart",
+        "operationId" : "getCartItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      },
+      "patch" : {
+        "description" : "Retrive information of the given Cart.",
+        "operationId" : "patchCartItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      },
+      "put" : {
+        "description" : "update the given Cart.",
+        "operationId" : "putCartItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartItemId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/items" : {
+      "get" : {
+        "description" : "Retrive cart items of a Cart.",
+        "operationId" : "getCartItemsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "skuId",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCartItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCartItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      },
+      "post" : {
+        "description" : "Add new Items to a Cart, return the whole Cart updated.",
+        "operationId" : "postCartItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CartItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CartItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      }
+    },
+    "/v1.0/cart-items/batch" : {
+      "delete" : {
+        "operationId" : "deleteCartItemBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      },
+      "put" : {
+        "operationId" : "putCartItemBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "CartItem" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/payment-url" : {
+      "get" : {
+        "operationId" : "getCartPaymentURL",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/account/{accountId}/carts" : {
+      "get" : {
+        "description" : "Retrieves carts for specific account in the given channel.",
+        "operationId" : "getChannelCartsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "accountId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCart"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageCart"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/checkout" : {
+      "post" : {
+        "operationId" : "postCartCheckout",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/coupon-code" : {
+      "post" : {
+        "description" : "Add new Items to a Cart, return the whole Cart updated.",
+        "operationId" : "postCartCouponCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CouponCode"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CouponCode"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      }
+    },
+    "/v1.0/channels/{channelId}/carts" : {
+      "post" : {
+        "operationId" : "postChannelCart",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "channelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Cart"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Cart"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      }
+    },
+    "/v1.0/carts/{cartId}" : {
+      "delete" : {
+        "operationId" : "deleteCart",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      },
+      "get" : {
+        "description" : "Retrive information of the given Cart.",
+        "operationId" : "getCart",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      },
+      "patch" : {
+        "operationId" : "patchCart",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Cart"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Cart"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      },
+      "put" : {
+        "operationId" : "putCart",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Cart"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Cart"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Cart"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      }
+    },
+    "/v1.0/carts/batch" : {
+      "delete" : {
+        "operationId" : "deleteCartBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      },
+      "put" : {
+        "operationId" : "putCartBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Cart" ]
+      }
+    },
+    "/v1.0/openapi.{type}" : {
+      "get" : {
+        "operationId" : "getOpenAPI",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "type",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/yaml" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/carts/{cartId}/payment-methods" : {
+      "get" : {
+        "description" : "Retrive payment methods available for the Cart.",
+        "operationId" : "getCartPaymentMethodsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePaymentMethod"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PagePaymentMethod"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PaymentMethod" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/payment-methods/export-batch" : {
+      "post" : {
+        "operationId" : "postCartPaymentMethodsPageExportBatch",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "PaymentMethod" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/shipping-methods" : {
+      "get" : {
+        "description" : "Retrive payment methods available for the Cart.",
+        "operationId" : "getCartShippingMethodsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageShippingMethod"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageShippingMethod"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ShippingMethod" ]
+      }
+    },
+    "/v1.0/carts/{cartId}/shipping-methods/export-batch" : {
+      "post" : {
+        "operationId" : "postCartShippingMethodsPageExportBatch",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "cartId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ShippingMethod" ]
+      }
+    }
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/o/headless-commerce-delivery-cart/"
+  } ]
+}

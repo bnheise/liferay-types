@@ -1,0 +1,7093 @@
+{
+  "components" : {
+    "schemas" : {
+      "Account" : {
+        "properties" : {
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "emailAddress" : {
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "logoId" : {
+            "example" : 20078,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "example" : "Account Name",
+            "type" : "string"
+          },
+          "root" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "taxId" : {
+            "example" : "Abcd1234",
+            "type" : "string"
+          },
+          "type" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.Account",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Account"
+        }
+      },
+      "BillingAddress" : {
+        "properties" : {
+          "city" : {
+            "example" : "Diamond Bar",
+            "type" : "string"
+          },
+          "countryISOCode" : {
+            "example" : "US",
+            "type" : "string"
+          },
+          "description" : {
+            "example" : "right stairs, first room on the left",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "latitude" : {
+            "example" : 33.9976884,
+            "format" : "double",
+            "type" : "number"
+          },
+          "longitude" : {
+            "example" : -117.8144595,
+            "format" : "double",
+            "type" : "number"
+          },
+          "name" : {
+            "example" : "Alessio Antonio Rendina",
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "example" : "(123) 456 7890",
+            "type" : "string"
+          },
+          "regionISOCode" : {
+            "example" : "CA",
+            "type" : "string"
+          },
+          "street1" : {
+            "example" : "1400",
+            "type" : "string"
+          },
+          "street2" : {
+            "example" : "1st floor",
+            "type" : "string"
+          },
+          "street3" : {
+            "example" : "suite 200",
+            "type" : "string"
+          },
+          "vatNumber" : {
+            "example" : "353246836565",
+            "type" : "string"
+          },
+          "zip" : {
+            "example" : "91765",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.BillingAddress",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "city", "countryISOCode", "name", "street1" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "BillingAddress"
+        }
+      },
+      "Channel" : {
+        "properties" : {
+          "currencyCode" : {
+            "example" : "USD",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "example" : "Alessio Antonio Rendina",
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.Channel",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Channel"
+        }
+      },
+      "OrderAccountGroup" : {
+        "properties" : {
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "name" : {
+            "example" : "OrderAccountGroup Name",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderAccountGroup",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderAccountGroup"
+        }
+      },
+      "CustomField" : {
+        "properties" : {
+          "customValue" : {
+            "$ref" : "#/components/schemas/CustomValue"
+          },
+          "dataType" : {
+            "description" : "The field type (e.g., image, text, etc.).",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "name" : {
+            "description" : "The field's internal name. This is valid for comparisons and unique in the structured content.",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.CustomField",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "CustomField"
+        }
+      },
+      "CustomValue" : {
+        "properties" : {
+          "data" : {
+            "description" : "The field's content for simple types.",
+            "type" : "object"
+          },
+          "data_i18n" : {
+            "additionalProperties" : {
+              "type" : "string"
+            },
+            "type" : "object"
+          },
+          "geo" : {
+            "$ref" : "#/components/schemas/Geo"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.CustomValue",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "CustomValue"
+        }
+      },
+      "Facet" : {
+        "properties" : {
+          "facetCriteria" : {
+            "type" : "string"
+          },
+          "facetValues" : {
+            "items" : {
+              "$ref" : "#/components/schemas/FacetValue"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "FacetValue" : {
+        "properties" : {
+          "numberOfOccurrences" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "term" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "Geo" : {
+        "description" : "A point determined by latitude and longitude.",
+        "properties" : {
+          "latitude" : {
+            "description" : "The latitude of a point in space.",
+            "format" : "double",
+            "type" : "number"
+          },
+          "longitude" : {
+            "description" : "The longitude of a point in space.",
+            "format" : "double",
+            "type" : "number"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.Geo",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Geo"
+        }
+      },
+      "OrderItem" : {
+        "properties" : {
+          "bookedQuantityId" : {
+            "example" : 32144,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "customFields" : {
+            "items" : {
+              "$ref" : "#/components/schemas/CustomField"
+            },
+            "type" : "array"
+          },
+          "decimalQuantity" : {
+            "example" : 10.1,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "deliveryGroup" : {
+            "example" : "separate package",
+            "type" : "string"
+          },
+          "discountAmount" : {
+            "example" : 2,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountManuallyAdjusted" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "discountPercentageLevel1" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountPercentageLevel1WithTaxAmount" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountPercentageLevel2" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountPercentageLevel2WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountPercentageLevel3" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountPercentageLevel3WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountPercentageLevel4" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountPercentageLevel4WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "discountWithTaxAmount" : {
+            "example" : 2,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "finalPrice" : {
+            "example" : 200,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "finalPriceWithTaxAmount" : {
+            "example" : 200,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "formattedQuantity" : {
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Hand Saw, hr_HR=Product Name HR, hu_HU=Product Name HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Hand Saw, hr_HR=Product Name HR, hu_HU=Product Name HU}",
+            "type" : "object"
+          },
+          "options" : {
+            "type" : "string"
+          },
+          "orderExternalReferenceCode" : {
+            "example" : "CAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderId" : {
+            "example" : 30128,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "priceManuallyAdjusted" : {
+            "example" : true,
+            "readOnly" : true,
+            "type" : "boolean"
+          },
+          "printedNote" : {
+            "example" : "Order item printed note",
+            "type" : "string"
+          },
+          "promoPrice" : {
+            "example" : 101,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "promoPriceWithTaxAmount" : {
+            "example" : 101,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "quantity" : {
+            "example" : 2,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "replacedSku" : {
+            "example" : "1234123124",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "replacedSkuId" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "requestedDeliveryDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "shippedQuantity" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "shippingAddress" : {
+            "$ref" : "#/components/schemas/ShippingAddress"
+          },
+          "shippingAddressId" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "sku" : {
+            "example" : "12341234",
+            "type" : "string"
+          },
+          "skuExternalReferenceCode" : {
+            "example" : "CAB-34098-789-N",
+            "type" : "string"
+          },
+          "skuId" : {
+            "example" : 30128,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "subscription" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "unitOfMeasure" : {
+            "example" : "pc",
+            "type" : "string"
+          },
+          "unitPrice" : {
+            "example" : 101,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "unitPriceWithTaxAmount" : {
+            "example" : 101,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "virtualItemURLs" : {
+            "items" : {
+              "type" : "string"
+            },
+            "readOnly" : true,
+            "type" : "array"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderItem",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderItem"
+        }
+      },
+      "PageOrderItem" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderItem"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "ShippingAddress" : {
+        "properties" : {
+          "city" : {
+            "example" : "Diamond Bar",
+            "type" : "string"
+          },
+          "countryISOCode" : {
+            "example" : "US",
+            "type" : "string"
+          },
+          "description" : {
+            "example" : "right stairs, first room on the left",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "latitude" : {
+            "example" : 33.9976884,
+            "format" : "double",
+            "type" : "number"
+          },
+          "longitude" : {
+            "example" : -117.8144595,
+            "format" : "double",
+            "type" : "number"
+          },
+          "name" : {
+            "example" : "Alessio Antonio Rendina",
+            "type" : "string"
+          },
+          "phoneNumber" : {
+            "example" : "(123) 456 7890",
+            "type" : "string"
+          },
+          "regionISOCode" : {
+            "example" : "CA",
+            "type" : "string"
+          },
+          "street1" : {
+            "example" : "1400",
+            "type" : "string"
+          },
+          "street2" : {
+            "example" : "1st floor",
+            "type" : "string"
+          },
+          "street3" : {
+            "example" : "suite 200",
+            "type" : "string"
+          },
+          "zip" : {
+            "example" : "91765",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.ShippingAddress",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "city", "countryISOCode", "name", "street1" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "ShippingAddress"
+        }
+      },
+      "OrderNote" : {
+        "properties" : {
+          "author" : {
+            "example" : "Alessio Antonio Rendina",
+            "type" : "string"
+          },
+          "content" : {
+            "example" : "This order will be shipped separately",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "orderExternalReferenceCode" : {
+            "example" : "CAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderId" : {
+            "example" : 30128,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "restricted" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderNote",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderNote"
+        }
+      },
+      "PageOrderNote" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderNote"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "Order" : {
+        "properties" : {
+          "account" : {
+            "$ref" : "#/components/schemas/Account"
+          },
+          "accountExternalReferenceCode" : {
+            "example" : "AAB-34098-789-N",
+            "type" : "string"
+          },
+          "accountId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "advanceStatus" : {
+            "example" : "trasmitted",
+            "type" : "string"
+          },
+          "billingAddress" : {
+            "$ref" : "#/components/schemas/BillingAddress"
+          },
+          "billingAddressId" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "channel" : {
+            "$ref" : "#/components/schemas/Channel"
+          },
+          "channelExternalReferenceCode" : {
+            "example" : "AAB-34098-789-N",
+            "type" : "string"
+          },
+          "channelId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "couponCode" : {
+            "example" : "save20",
+            "type" : "string"
+          },
+          "createDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "creatorEmailAddress" : {
+            "type" : "string"
+          },
+          "currencyCode" : {
+            "example" : "USD",
+            "type" : "string"
+          },
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "deliveryTermDescription" : {
+            "example" : "Orders delivery terms description",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "deliveryTermId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "deliveryTermName" : {
+            "example" : "Orders delivery terms name",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "lastPriceUpdateDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "modifiedDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "orderDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "orderItems" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderItem"
+            },
+            "type" : "array"
+          },
+          "orderStatus" : {
+            "example" : 0,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "orderStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "orderTypeExternalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "orderTypeId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "paymentMethod" : {
+            "example" : "paypal",
+            "type" : "string"
+          },
+          "paymentStatus" : {
+            "example" : 0,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "paymentStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "paymentTermDescription" : {
+            "example" : "Orders payment terms description",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "paymentTermId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "paymentTermName" : {
+            "example" : "Orders payment terms name",
+            "readOnly" : true,
+            "type" : "string"
+          },
+          "printedNote" : {
+            "example" : "Order printed note",
+            "type" : "string"
+          },
+          "purchaseOrderNumber" : {
+            "example" : "Abcd1234",
+            "type" : "string"
+          },
+          "requestedDeliveryDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "shippingAddress" : {
+            "$ref" : "#/components/schemas/ShippingAddress"
+          },
+          "shippingAddressId" : {
+            "example" : 31130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "shippingAmount" : {
+            "example" : 12,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingAmountFormatted" : {
+            "type" : "string"
+          },
+          "shippingAmountValue" : {
+            "example" : 12,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountAmount" : {
+            "type" : "number"
+          },
+          "shippingDiscountAmountFormatted" : {
+            "type" : "string"
+          },
+          "shippingDiscountAmountValue" : {
+            "format" : "double",
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel1" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel1WithTaxAmount" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel2" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel2WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel3" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel3WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel4" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountPercentageLevel4WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingDiscountWithTaxAmount" : {
+            "type" : "number"
+          },
+          "shippingDiscountWithTaxAmountFormatted" : {
+            "type" : "string"
+          },
+          "shippingMethod" : {
+            "example" : "fixed",
+            "type" : "string"
+          },
+          "shippingOption" : {
+            "example" : "by Air",
+            "type" : "string"
+          },
+          "shippingWithTaxAmount" : {
+            "example" : 12,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "shippingWithTaxAmountFormatted" : {
+            "type" : "string"
+          },
+          "shippingWithTaxAmountValue" : {
+            "example" : 12,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotal" : {
+            "type" : "number"
+          },
+          "subtotalAmount" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "subtotalDiscountAmount" : {
+            "type" : "number"
+          },
+          "subtotalDiscountAmountFormatted" : {
+            "type" : "string"
+          },
+          "subtotalDiscountPercentageLevel1" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentageLevel1WithTaxAmount" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentageLevel2" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentageLevel2WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentageLevel3" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentageLevel3WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentageLevel4" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountPercentageLevel4WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "subtotalDiscountWithTaxAmount" : {
+            "type" : "number"
+          },
+          "subtotalDiscountWithTaxAmountFormatted" : {
+            "type" : "string"
+          },
+          "subtotalFormatted" : {
+            "type" : "string"
+          },
+          "subtotalWithTaxAmount" : {
+            "type" : "number"
+          },
+          "subtotalWithTaxAmountFormatted" : {
+            "type" : "string"
+          },
+          "subtotalWithTaxAmountValue" : {
+            "format" : "double",
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "taxAmount" : {
+            "example" : 11,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "taxAmountFormatted" : {
+            "type" : "string"
+          },
+          "taxAmountValue" : {
+            "example" : 12,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "total" : {
+            "example" : 113,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalAmount" : {
+            "example" : 113,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "totalDiscountAmount" : {
+            "example" : 11,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountAmountFormatted" : {
+            "type" : "string"
+          },
+          "totalDiscountAmountValue" : {
+            "example" : 11,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel1" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel1WithTaxAmount" : {
+            "example" : 20,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel2" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel2WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel3" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel3WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel4" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountPercentageLevel4WithTaxAmount" : {
+            "example" : 0,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountWithTaxAmount" : {
+            "example" : 11,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalDiscountWithTaxAmountFormatted" : {
+            "type" : "string"
+          },
+          "totalDiscountWithTaxAmountValue" : {
+            "example" : 11,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalFormatted" : {
+            "type" : "string"
+          },
+          "totalWithTaxAmount" : {
+            "example" : 113,
+            "exclusiveMinimum" : false,
+            "minimum" : 0,
+            "type" : "number"
+          },
+          "totalWithTaxAmountFormatted" : {
+            "type" : "string"
+          },
+          "totalWithTaxAmountValue" : {
+            "example" : 113,
+            "exclusiveMinimum" : false,
+            "format" : "double",
+            "minimum" : 0,
+            "readOnly" : true,
+            "type" : "number"
+          },
+          "transactionId" : {
+            "type" : "string"
+          },
+          "workflowStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.Order",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "channelId", "currencyCode" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "Order"
+        }
+      },
+      "Status" : {
+        "properties" : {
+          "code" : {
+            "format" : "int32",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "label" : {
+            "example" : "black",
+            "type" : "string"
+          },
+          "label_i18n" : {
+            "example" : "black",
+            "type" : "string"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.Status",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "type" : "object",
+        "xml" : {
+          "name" : "Status"
+        }
+      },
+      "PageOrder" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Order"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "OrderRuleAccountGroup" : {
+        "properties" : {
+          "accountGroup" : {
+            "$ref" : "#/components/schemas/OrderAccountGroup"
+          },
+          "accountGroupExternalReferenceCode" : {
+            "example" : "DAB-34098-789-N",
+            "type" : "string"
+          },
+          "accountGroupId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "orderRuleAccountGroupId" : {
+            "example" : 30643,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderRuleExternalReferenceCode" : {
+            "example" : "PAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderRuleId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderRuleAccountGroup",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "accountGroupId", "orderRuleId" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderRuleAccountGroup"
+        }
+      },
+      "PageOrderRuleAccountGroup" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "OrderRuleAccount" : {
+        "properties" : {
+          "account" : {
+            "$ref" : "#/components/schemas/Account"
+          },
+          "accountExternalReferenceCode" : {
+            "example" : "DAB-34098-789-N",
+            "type" : "string"
+          },
+          "accountId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "orderRuleAccountId" : {
+            "example" : 30643,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderRuleExternalReferenceCode" : {
+            "example" : "PAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderRuleId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderRuleAccount",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "accountId", "orderRuleId" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderRuleAccount"
+        }
+      },
+      "PageOrderRuleAccount" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleAccount"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "OrderRuleChannel" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "channel" : {
+            "$ref" : "#/components/schemas/Channel"
+          },
+          "channelExternalReferenceCode" : {
+            "example" : "DAB-34098-789-N",
+            "type" : "string"
+          },
+          "channelId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "orderRuleChannelId" : {
+            "example" : 30643,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderRuleExternalReferenceCode" : {
+            "example" : "PAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderRuleId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderRuleChannel",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "channelId", "orderRuleId" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderRuleChannel"
+        }
+      },
+      "PageOrderRuleChannel" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleChannel"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "OrderRuleOrderType" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "orderRuleExternalReferenceCode" : {
+            "example" : "PAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderRuleId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "orderRuleOrderTypeId" : {
+            "example" : 30643,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderType" : {
+            "$ref" : "#/components/schemas/OrderType"
+          },
+          "orderTypeExternalReferenceCode" : {
+            "example" : "DAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderTypeId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderRuleOrderType",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "orderRuleId", "orderTypeId" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderRuleOrderType"
+        }
+      },
+      "OrderType" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "active" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "customFields" : {
+            "additionalProperties" : {
+              "type" : "object"
+            },
+            "type" : "object"
+          },
+          "description" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Title, hr_HR=Title HR, hu_HU=Title HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Title, hr_HR=Title HR, hu_HU=Title HU}",
+            "type" : "object"
+          },
+          "displayDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "displayOrder" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "expirationDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Title, hr_HR=Title HR, hu_HU=Title HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Title, hr_HR=Title HR, hu_HU=Title HU}",
+            "type" : "object"
+          },
+          "neverExpire" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "orderTypeChannels" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderTypeChannel"
+            },
+            "type" : "array"
+          },
+          "workflowStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderType",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "name" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderType"
+        }
+      },
+      "OrderTypeChannel" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "channel" : {
+            "$ref" : "#/components/schemas/Channel"
+          },
+          "channelExternalReferenceCode" : {
+            "example" : "PAB-34098-789-N",
+            "type" : "string"
+          },
+          "channelId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "orderTypeChannelId" : {
+            "example" : 30643,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "orderTypeExternalReferenceCode" : {
+            "example" : "DAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderTypeId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderTypeChannel",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "channelId", "orderTypeId" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderTypeChannel"
+        }
+      },
+      "PageOrderRuleOrderType" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleOrderType"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "OrderRule" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "active" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "author" : {
+            "example" : "admin",
+            "type" : "string"
+          },
+          "createDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "description" : {
+            "example" : "Laptops, Beverages",
+            "type" : "string"
+          },
+          "displayDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "expirationDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "name" : {
+            "example" : "Laptops, Beverages",
+            "type" : "string"
+          },
+          "neverExpire" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "orderRuleAccount" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleAccount"
+            },
+            "type" : "array"
+          },
+          "orderRuleAccountGroup" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+            },
+            "type" : "array"
+          },
+          "orderRuleChannel" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleChannel"
+            },
+            "type" : "array"
+          },
+          "orderRuleOrderType" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRuleOrderType"
+            },
+            "type" : "array"
+          },
+          "priority" : {
+            "example" : 1.2,
+            "format" : "double",
+            "type" : "number"
+          },
+          "type" : {
+            "example" : "order-limit",
+            "type" : "string"
+          },
+          "typeSettings" : {
+            "example" : "22.5",
+            "type" : "string"
+          },
+          "workflowStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.OrderRule",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "name", "type" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "OrderRule"
+        }
+      },
+      "PageOrderRule" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderRule"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageOrderTypeChannel" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderTypeChannel"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageOrderType" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/OrderType"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "PageTermOrderType" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/TermOrderType"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "TermOrderType" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "orderType" : {
+            "$ref" : "#/components/schemas/OrderType"
+          },
+          "orderTypeExternalReferenceCode" : {
+            "example" : "DAB-34098-789-N",
+            "type" : "string"
+          },
+          "orderTypeId" : {
+            "example" : 30324,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "termExternalReferenceCode" : {
+            "example" : "PAB-34098-789-N",
+            "type" : "string"
+          },
+          "termId" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "termOrderTypeId" : {
+            "example" : 30643,
+            "format" : "int64",
+            "readOnly" : true,
+            "type" : "integer"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.TermOrderType",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "orderTypeId", "termId" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "TermOrderType"
+        }
+      },
+      "Term" : {
+        "properties" : {
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "readOnly" : true,
+            "type" : "object"
+          },
+          "active" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "createDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "description" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Term Description US, hr_HR=Term Description HR, hu_HU=Term Description HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Term Description US, hr_HR=Term Description HR, hu_HU=Term Description HU}",
+            "type" : "object"
+          },
+          "displayDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "expirationDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "externalReferenceCode" : {
+            "example" : "AB-34098-789-N",
+            "type" : "string"
+          },
+          "id" : {
+            "example" : 30130,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "label" : {
+            "additionalProperties" : {
+              "example" : "{en_US=Term Label US, hr_HR=Term Label HR, hu_HU=Term Label HU}",
+              "type" : "string"
+            },
+            "example" : "{en_US=Term Label US, hr_HR=Term Label HR, hu_HU=Term Label HU}",
+            "type" : "object"
+          },
+          "name" : {
+            "example" : "Laptops, Beverages",
+            "type" : "string"
+          },
+          "neverExpire" : {
+            "example" : true,
+            "type" : "boolean"
+          },
+          "priority" : {
+            "example" : 1.2,
+            "format" : "double",
+            "type" : "number"
+          },
+          "termOrderType" : {
+            "items" : {
+              "$ref" : "#/components/schemas/TermOrderType"
+            },
+            "type" : "array"
+          },
+          "type" : {
+            "example" : "payment-terms",
+            "type" : "string"
+          },
+          "typeLocalized" : {
+            "example" : "Payment Terms",
+            "type" : "string"
+          },
+          "typeSettings" : {
+            "type" : "string"
+          },
+          "workflowStatusInfo" : {
+            "$ref" : "#/components/schemas/Status"
+          },
+          "x-class-name" : {
+            "default" : "com.liferay.headless.commerce.admin.order.dto.v1_0.Term",
+            "readOnly" : true,
+            "type" : "string"
+          }
+        },
+        "required" : [ "name", "type" ],
+        "type" : "object",
+        "xml" : {
+          "name" : "Term"
+        }
+      },
+      "PageTerm" : {
+        "properties" : {
+          "lastPage" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalCount" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "items" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Term"
+            },
+            "type" : "array"
+          },
+          "pageSize" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "page" : {
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "facets" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Facet"
+            },
+            "type" : "array"
+          },
+          "actions" : {
+            "additionalProperties" : {
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "type" : "object"
+            },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      }
+    }
+  },
+  "info" : {
+    "description" : "Liferay Commerce Admin Order API. A Java client JAR is available for use with the group ID 'com.liferay', artifact ID 'com.liferay.headless.commerce.admin.order.client', and version '4.0.31'.",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "title" : "Liferay Commerce Admin Order API",
+    "version" : "v1.0"
+  },
+  "openapi" : "3.0.1",
+  "paths" : {
+    "/v1.0/orders/by-externalReferenceCode/{externalReferenceCode}/account" : {
+      "get" : {
+        "operationId" : "getOrderByExternalReferenceCodeAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/orders/{id}/account" : {
+      "get" : {
+        "operationId" : "getOrderIdAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/order-rule-accounts/{orderRuleAccountId}/account" : {
+      "get" : {
+        "operationId" : "getOrderRuleAccountAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleAccountId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Account"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Account" ]
+      }
+    },
+    "/v1.0/orders/by-externalReferenceCode/{externalReferenceCode}/billingAddress" : {
+      "get" : {
+        "operationId" : "getOrderByExternalReferenceCodeBillingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BillingAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BillingAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "BillingAddress" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderByExternalReferenceCodeBillingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BillingAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BillingAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "BillingAddress" ]
+      }
+    },
+    "/v1.0/orders/{id}/billingAddress" : {
+      "get" : {
+        "operationId" : "getOrderIdBillingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BillingAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BillingAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "BillingAddress" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderIdBillingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BillingAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BillingAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "BillingAddress" ]
+      }
+    },
+    "/v1.0/orders/by-externalReferenceCode/{externalReferenceCode}/channel" : {
+      "get" : {
+        "operationId" : "getOrderByExternalReferenceCodeChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Channel" ]
+      }
+    },
+    "/v1.0/orders/{id}/channel" : {
+      "get" : {
+        "operationId" : "getOrderIdChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Channel" ]
+      }
+    },
+    "/v1.0/order-rule-channels/{orderRuleChannelId}/channel" : {
+      "get" : {
+        "operationId" : "getOrderRuleChannelChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleChannelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Channel" ]
+      }
+    },
+    "/v1.0/order-type-channels/{orderTypeChannelId}/channel" : {
+      "get" : {
+        "operationId" : "getOrderTypeChannelChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderTypeChannelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Channel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Channel" ]
+      }
+    },
+    "/v1.0/openapi.{type}" : {
+      "get" : {
+        "operationId" : "getOpenAPI",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "type",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/yaml" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/order-rule-account-groups/{orderRuleAccountGroupId}/account-group" : {
+      "get" : {
+        "operationId" : "getOrderRuleAccountGroupAccountGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleAccountGroupId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderAccountGroup" ]
+      }
+    },
+    "/v1.0/orders/by-externalReferenceCode/{externalReferenceCode}/orderItems" : {
+      "get" : {
+        "operationId" : "getOrderByExternalReferenceCodeOrderItemsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "post" : {
+        "operationId" : "postOrderByExternalReferenceCodeOrderItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orderItems/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteOrderItemByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "get" : {
+        "operationId" : "getOrderItemByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderItemByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "put" : {
+        "operationId" : "putOrderItemByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orderItems/{id}" : {
+      "delete" : {
+        "operationId" : "deleteOrderItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "get" : {
+        "operationId" : "getOrderItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "put" : {
+        "operationId" : "putOrderItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orders/{id}/orderItems" : {
+      "get" : {
+        "operationId" : "getOrderIdOrderItemsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "post" : {
+        "operationId" : "postOrderIdOrderItem",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderItem"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orderItems" : {
+      "get" : {
+        "operationId" : "getOrderItemsPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderItem"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderItem"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orderItems/export-batch" : {
+      "post" : {
+        "operationId" : "postOrderItemsPageExportBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orderItems/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderItemBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      },
+      "put" : {
+        "operationId" : "putOrderItemBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orders/orderItems/batch" : {
+      "post" : {
+        "operationId" : "postOrderIdOrderItemBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderItem" ]
+      }
+    },
+    "/v1.0/orders/by-externalReferenceCode/{externalReferenceCode}/orderNotes" : {
+      "get" : {
+        "operationId" : "getOrderByExternalReferenceCodeOrderNotesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderNote"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderNote"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      },
+      "post" : {
+        "operationId" : "postOrderByExternalReferenceCodeOrderNote",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      }
+    },
+    "/v1.0/orderNotes/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteOrderNoteByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      },
+      "get" : {
+        "operationId" : "getOrderNoteByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderNoteByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      }
+    },
+    "/v1.0/orders/{id}/orderNotes" : {
+      "get" : {
+        "operationId" : "getOrderIdOrderNotesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderNote"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderNote"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      },
+      "post" : {
+        "operationId" : "postOrderIdOrderNote",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      }
+    },
+    "/v1.0/orderNotes/{id}" : {
+      "delete" : {
+        "operationId" : "deleteOrderNote",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      },
+      "get" : {
+        "operationId" : "getOrderNote",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderNote"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderNote",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderNote"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      }
+    },
+    "/v1.0/orderNotes/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderNoteBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      }
+    },
+    "/v1.0/orders/orderNotes/batch" : {
+      "post" : {
+        "operationId" : "postOrderIdOrderNoteBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderNote" ]
+      }
+    },
+    "/v1.0/orders/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteOrderByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      },
+      "get" : {
+        "operationId" : "getOrderByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Order"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Order"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Order"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      }
+    },
+    "/v1.0/orders" : {
+      "get" : {
+        "operationId" : "getOrdersPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrder"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrder"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      },
+      "post" : {
+        "operationId" : "postOrder",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Order"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Order"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Order"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      }
+    },
+    "/v1.0/orders/{id}" : {
+      "delete" : {
+        "operationId" : "deleteOrder",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      },
+      "get" : {
+        "operationId" : "getOrder",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Order"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Order"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrder",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Order"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Order"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      }
+    },
+    "/v1.0/orders/export-batch" : {
+      "post" : {
+        "operationId" : "postOrdersPageExportBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      }
+    },
+    "/v1.0/orders/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      },
+      "post" : {
+        "operationId" : "postOrderBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Order" ]
+      }
+    },
+    "/v1.0/order-rules/by-externalReferenceCode/{externalReferenceCode}/order-rule-account-groups" : {
+      "get" : {
+        "operationId" : "getOrderRuleByExternalReferenceCodeOrderRuleAccountGroupsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccountGroup" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleByExternalReferenceCodeOrderRuleAccountGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccountGroup" ]
+      }
+    },
+    "/v1.0/order-rule-account-groups/{orderRuleAccountGroupId}" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleAccountGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleAccountGroupId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccountGroup" ]
+      }
+    },
+    "/v1.0/order-rules/{id}/order-rule-account-groups" : {
+      "get" : {
+        "operationId" : "getOrderRuleIdOrderRuleAccountGroupsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccountGroup" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleAccountGroup",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccountGroup"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/order-rule-account-groups/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleAccountGroupBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccountGroup" ]
+      }
+    },
+    "/v1.0/order-rules/order-rule-account-groups/batch" : {
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleAccountGroupBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/order-rules/by-externalReferenceCode/{externalReferenceCode}/order-rule-accounts" : {
+      "get" : {
+        "operationId" : "getOrderRuleByExternalReferenceCodeOrderRuleAccountsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccount"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccount"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccount" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleByExternalReferenceCodeOrderRuleAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccount"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccount"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccount"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccount"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccount" ]
+      }
+    },
+    "/v1.0/order-rules/{id}/order-rule-accounts" : {
+      "get" : {
+        "operationId" : "getOrderRuleIdOrderRuleAccountsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccount"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleAccount"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccount" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccount"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleAccount"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccount"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleAccount"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/order-rule-accounts/{orderRuleAccountId}" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleAccount",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleAccountId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccount" ]
+      }
+    },
+    "/v1.0/order-rule-accounts/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleAccountBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleAccount" ]
+      }
+    },
+    "/v1.0/order-rules/order-rule-accounts/batch" : {
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleAccountBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        }
+      }
+    },
+    "/v1.0/order-rules/by-externalReferenceCode/{externalReferenceCode}/order-rule-channels" : {
+      "get" : {
+        "operationId" : "getOrderRuleByExternalReferenceCodeOrderRuleChannelsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleChannel" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleByExternalReferenceCodeOrderRuleChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleChannel"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleChannel"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleChannel" ]
+      }
+    },
+    "/v1.0/order-rules/{id}/order-rule-channels" : {
+      "get" : {
+        "operationId" : "getOrderRuleIdOrderRuleChannelsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleChannel" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleChannel"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleChannel"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleChannel" ]
+      }
+    },
+    "/v1.0/order-rule-channels/{orderRuleChannelId}" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleChannelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleChannel" ]
+      }
+    },
+    "/v1.0/order-rule-channels/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleChannelBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleChannel" ]
+      }
+    },
+    "/v1.0/order-rules/order-rule-channels/batch" : {
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleChannelBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleChannel" ]
+      }
+    },
+    "/v1.0/order-rules/by-externalReferenceCode/{externalReferenceCode}/order-rule-order-types" : {
+      "get" : {
+        "operationId" : "getOrderRuleByExternalReferenceCodeOrderRuleOrderTypesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleOrderType" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleByExternalReferenceCodeOrderRuleOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleOrderType"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleOrderType"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleOrderType" ]
+      }
+    },
+    "/v1.0/order-rules/{id}/order-rule-order-types" : {
+      "get" : {
+        "operationId" : "getOrderRuleIdOrderRuleOrderTypesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRuleOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleOrderType" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleOrderType"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRuleOrderType"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRuleOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleOrderType" ]
+      }
+    },
+    "/v1.0/order-rule-order-types/{orderRuleOrderTypeId}" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleOrderTypeId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleOrderType" ]
+      }
+    },
+    "/v1.0/order-rule-order-types/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleOrderTypeBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleOrderType" ]
+      }
+    },
+    "/v1.0/order-rules/order-rule-order-types/batch" : {
+      "post" : {
+        "operationId" : "postOrderRuleIdOrderRuleOrderTypeBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRuleOrderType" ]
+      }
+    },
+    "/v1.0/order-rules/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      },
+      "get" : {
+        "operationId" : "getOrderRuleByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderRuleByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRule"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRule"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      }
+    },
+    "/v1.0/order-rules/{id}" : {
+      "delete" : {
+        "operationId" : "deleteOrderRule",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      },
+      "get" : {
+        "operationId" : "getOrderRule",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderRule",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRule"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRule"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      }
+    },
+    "/v1.0/order-rules" : {
+      "get" : {
+        "operationId" : "getOrderRulesPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRule"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderRule"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRule",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRule"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderRule"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderRule"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      }
+    },
+    "/v1.0/order-rules/export-batch" : {
+      "post" : {
+        "operationId" : "postOrderRulesPageExportBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      }
+    },
+    "/v1.0/order-rules/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderRuleBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      },
+      "post" : {
+        "operationId" : "postOrderRuleBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderRule" ]
+      }
+    },
+    "/v1.0/order-types/by-externalReferenceCode/{externalReferenceCode}/order-type-channels" : {
+      "get" : {
+        "operationId" : "getOrderTypeByExternalReferenceCodeOrderTypeChannelsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderTypeChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderTypeChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderTypeChannel" ]
+      },
+      "post" : {
+        "operationId" : "postOrderTypeByExternalReferenceCodeOrderTypeChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderTypeChannel"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderTypeChannel"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderTypeChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderTypeChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderTypeChannel" ]
+      }
+    },
+    "/v1.0/order-types/{id}/order-type-channels" : {
+      "get" : {
+        "operationId" : "getOrderTypeIdOrderTypeChannelsPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderTypeChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderTypeChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderTypeChannel" ]
+      },
+      "post" : {
+        "operationId" : "postOrderTypeIdOrderTypeChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderTypeChannel"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderTypeChannel"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderTypeChannel"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderTypeChannel"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderTypeChannel" ]
+      }
+    },
+    "/v1.0/order-type-channels/{orderTypeChannelId}" : {
+      "delete" : {
+        "operationId" : "deleteOrderTypeChannel",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderTypeChannelId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderTypeChannel" ]
+      }
+    },
+    "/v1.0/order-type-channels/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderTypeChannelBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderTypeChannel" ]
+      }
+    },
+    "/v1.0/order-types/order-type-channels/batch" : {
+      "post" : {
+        "operationId" : "postOrderTypeIdOrderTypeChannelBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderTypeChannel" ]
+      }
+    },
+    "/v1.0/order-types/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteOrderTypeByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      },
+      "get" : {
+        "operationId" : "getOrderTypeByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderTypeByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderType"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderType"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      }
+    },
+    "/v1.0/order-rule-order-types/{orderRuleOrderTypeId}/order-type" : {
+      "get" : {
+        "operationId" : "getOrderRuleOrderTypeOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "orderRuleOrderTypeId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      }
+    },
+    "/v1.0/order-types" : {
+      "get" : {
+        "operationId" : "getOrderTypesPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      },
+      "post" : {
+        "operationId" : "postOrderType",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderType"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderType"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      }
+    },
+    "/v1.0/order-types/{id}" : {
+      "delete" : {
+        "operationId" : "deleteOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      },
+      "get" : {
+        "operationId" : "getOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderType"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderType"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      }
+    },
+    "/v1.0/term-order-types/{termOrderTypeId}/order-type" : {
+      "get" : {
+        "operationId" : "getTermOrderTypeOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "termOrderTypeId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      }
+    },
+    "/v1.0/order-types/export-batch" : {
+      "post" : {
+        "operationId" : "postOrderTypesPageExportBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      }
+    },
+    "/v1.0/order-types/batch" : {
+      "delete" : {
+        "operationId" : "deleteOrderTypeBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      },
+      "post" : {
+        "operationId" : "postOrderTypeBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "OrderType" ]
+      }
+    },
+    "/v1.0/orders/by-externalReferenceCode/{externalReferenceCode}/shippingAddress" : {
+      "get" : {
+        "operationId" : "getOrderByExternalReferenceCodeShippingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ShippingAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ShippingAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ShippingAddress" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderByExternalReferenceCodeShippingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ShippingAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ShippingAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ShippingAddress" ]
+      }
+    },
+    "/v1.0/orderItems/{id}/shippingAddress" : {
+      "get" : {
+        "operationId" : "getOrderItemShippingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ShippingAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ShippingAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ShippingAddress" ]
+      }
+    },
+    "/v1.0/orders/{id}/shippingAddress" : {
+      "get" : {
+        "operationId" : "getOrderIdShippingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ShippingAddress"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ShippingAddress"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ShippingAddress" ]
+      },
+      "patch" : {
+        "operationId" : "patchOrderIdShippingAddress",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ShippingAddress"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ShippingAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "ShippingAddress" ]
+      }
+    },
+    "/v1.0/terms/by-externalReferenceCode/{externalReferenceCode}/term-order-types" : {
+      "get" : {
+        "operationId" : "getTermByExternalReferenceCodeTermOrderTypesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageTermOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageTermOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "TermOrderType" ]
+      },
+      "post" : {
+        "operationId" : "postTermByExternalReferenceCodeTermOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TermOrderType"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TermOrderType"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TermOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TermOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "TermOrderType" ]
+      }
+    },
+    "/v1.0/terms/{id}/term-order-types" : {
+      "get" : {
+        "operationId" : "getTermIdTermOrderTypesPage",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageTermOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageTermOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "TermOrderType" ]
+      },
+      "post" : {
+        "operationId" : "postTermIdTermOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TermOrderType"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TermOrderType"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TermOrderType"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TermOrderType"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "TermOrderType" ]
+      }
+    },
+    "/v1.0/term-order-types/{termOrderTypeId}" : {
+      "delete" : {
+        "operationId" : "deleteTermOrderType",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "termOrderTypeId",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "TermOrderType" ]
+      }
+    },
+    "/v1.0/terms/term-order-types/batch" : {
+      "post" : {
+        "operationId" : "postTermIdTermOrderTypeBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "TermOrderType" ]
+      }
+    },
+    "/v1.0/term-order-types/batch" : {
+      "delete" : {
+        "operationId" : "deleteTermOrderTypeBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "TermOrderType" ]
+      }
+    },
+    "/v1.0/terms/by-externalReferenceCode/{externalReferenceCode}" : {
+      "delete" : {
+        "operationId" : "deleteTermByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      },
+      "get" : {
+        "operationId" : "getTermByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      },
+      "patch" : {
+        "operationId" : "patchTermByExternalReferenceCode",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "externalReferenceCode",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Term"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Term"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      }
+    },
+    "/v1.0/terms/{id}" : {
+      "delete" : {
+        "operationId" : "deleteTerm",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { },
+              "application/xml" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      },
+      "get" : {
+        "operationId" : "getTerm",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      },
+      "patch" : {
+        "operationId" : "patchTerm",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Term"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Term"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      }
+    },
+    "/v1.0/terms" : {
+      "get" : {
+        "operationId" : "getTermsPage",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "pageSize",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageTerm"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageTerm"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      },
+      "post" : {
+        "operationId" : "postTerm",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Term"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Term"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Term"
+                }
+              }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      }
+    },
+    "/v1.0/terms/export-batch" : {
+      "post" : {
+        "operationId" : "postTermsPageExportBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "filter",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "search",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "sort",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "contentType",
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "fieldNames",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      }
+    },
+    "/v1.0/terms/batch" : {
+      "delete" : {
+        "operationId" : "deleteTermBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      },
+      "post" : {
+        "operationId" : "postTermBatch",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "callbackURL",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "default" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "default response"
+          }
+        },
+        "tags" : [ "Term" ]
+      }
+    }
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/o/headless-commerce-admin-order/"
+  } ]
+}
