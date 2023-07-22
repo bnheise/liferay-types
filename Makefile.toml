@@ -1,0 +1,6 @@
+[env]
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+
+# [tasks.fetch-specs]
+# command = "cargo"
+# args = ["run", "--release", "--manifest-path", "fetch-specs/Cargo.toml"]

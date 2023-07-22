@@ -1,0 +1,3 @@
+[tasks.fetch-specs]
+command = "cargo"
+args = ["run", "--release"]
